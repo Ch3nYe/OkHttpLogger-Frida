@@ -756,6 +756,7 @@ function find() {
                 field.setAccessible(true);
                 var name = field.getName()
                 var value = field.get(null)
+                eval(name+"='"+value+"'")
                 console.log("var " + name + " = \"" + value + "\";")
             }
             console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Find Complete~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
@@ -765,6 +766,19 @@ function find() {
             //console.log(Java.use("android.util.Log").getStackTraceString(error))
         }
     })
+}
+
+function help() {
+    console.log("");
+    console.log("------------------------- OkHttp Poker by SingleMan ------------------------------------");
+    console.log("API:")
+    console.log("   >>>  find()                                         检查是否使用了Okhttp & 是否可能被混淆 & 寻找okhttp3关键类及函数");
+    console.log("   >>>  switchLoader(\"okhttp3.OkHttpClient\")           参数：静态分析到的okhttpclient类名");
+    console.log("   >>>  hold()                                         开启HOOK拦截");
+    console.log("   >>>  history()                                      打印可重新发送的请求");
+    console.log("   >>>  resend(index)                                  重新发送请求");
+    console.log("   >>>  help()                                         显示本页");
+    console.log("----------------------------------------------------------------------------------------");
 }
 
 /**
@@ -781,6 +795,7 @@ function main() {
         console.log("   >>>  hold()                                         开启HOOK拦截");
         console.log("   >>>  history()                                      打印可重新发送的请求");
         console.log("   >>>  resend(index)                                  重新发送请求");
+        console.log("   >>>  help()                                         显示本页");
         console.log("----------------------------------------------------------------------------------------");
 
     })
